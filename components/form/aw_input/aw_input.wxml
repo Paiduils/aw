@@ -1,0 +1,22 @@
+<!--components/form/aw_input/aw_input.wxml-->
+<wxs module="filters" src="../utils/filters.wxs"></wxs>
+<!-- <view wx:for="{{form}}" wx:key="index" wx:if="{{formItem.type === 'input'}}"> -->
+<view>
+  <view class="cu-form-group {{formItem.topLine ? 'top-line': ''}}{{formItem.clearBottomLine ? '': 'bottom-line'}}">
+    <view class="title">{{filters.interceptNum(formItem.label, 0 ,6)}}<text class="red opacity0 {{formItem.requied ? 'opacity1' : ''}}" >*</text></view>
+    <input
+      type="{{formItem.inputType? formItem.inputType: 'text'}}" 
+      data-key="{{index}}"
+      disabled="{{formItem.disabled}}" 
+      value="{{formItem.value}}"
+      password="{{formItem.password}}"
+      bindinput="inputChange"
+      maxlength="{{formItem.maxLen ? formItem.maxLen: '40'}}"
+      placeholder="{{formItem.placeholder ? formItem.placeholder : formItem.noPlaceholder ? '' : '请输入' + filters.interceptNum(formItem.label, 0 ,6)}}"
+      placeholder-class="placeholderinput"
+    ></input>
+    <text wx:if="{{formItem.icon}}" class="{{formItem.icon}} {{formItem.icon && formItem.iconColor ? formItem.iconColor : 'text-orange'}}"></text>
+    <!-- 按钮 -->
+		<button wx:if="{{formItem.BtnText}}" class="cu-btn shadow {{formItem.BtnText && formItem.BtnBgCol ? formItem.BtnBgCol : 'bg-green'}}">{{formItem.BtnText}}</button>
+  </view>
+</view>

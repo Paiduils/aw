@@ -1,0 +1,9 @@
+var interceptNum = function(str, start, end) {
+  if (str != null) {
+    return str.slice(start, end);
+  }
+}
+
+module.exports = {
+  interceptNum: interceptNum
+}

@@ -1,0 +1,101 @@
+<!--components/form/aw_picker/aw_picker.wxml-->
+<wxs module="filters" src="../utils/filters.wxs"></wxs>
+<view>
+  <view class="cu-form-group {{formItem.topLine ? 'top-line': ''}} {{formItem.clearBottomLine ? '': 'bottom-line'}}">
+    <view class="title">
+      {{filters.interceptNum(formItem.label, 0 ,6)}}
+      <text class="red opacity0 {{formItem.requied ? 'opacity1' : ''}}" >*</text>
+    </view>
+    <!-- 单列选择器 -- 动态获取数据-->
+    <view class="picker-view-btn" wx:if="{{formItem.mode === 'selector' && formItem.showPickerView}}" bindtap="showPicker" data-key="{{index}}">
+      <view class="picker {{(formItem.value && !formItem.disabled) ? '' : 'placeholderinput'}}">
+        {{formItem.range[formItem.value] ? 
+          formItem.rangeKey ? formItem.range[formItem.value][formItem.rangeKey] : formItem.range[formItem.value] :
+          formItem.placeholder ? 
+          formItem.placeholder : 
+          formItem.noPlaceholder ? 
+          '' :
+          '请选择' + filters.interceptNum(formItem.label, 0 ,6)
+        }}
+			</view>
+    </view>
+    
+    <!-- 单列选择器 -- 静态数据 -->
+    <picker
+      wx:if="{{formItem.mode === 'selector' && !formItem.showPickerView }}"
+      data-key="{{index}}" 
+      mode="selector"
+      disabled="{{formItem.disabled}}"
+      bindchange="bindPickerChange"
+      value="{{formItem.value}}"
+      range="{{formItem.range}}"
+      range-key="{{formItem.rangeKey ? formItem.rangeKey : ''}}"
+    >
+			<view class="picker {{(formItem.value && !formItem.disabled) ? '' : 'placeholderinput'}}">
+        {{formItem.range[formItem.value] ? 
+          formItem.rangeKey ? formItem.range[formItem.value][formItem.rangeKey] : formItem.range[formItem.value] :
+          formItem.placeholder ? 
+          formItem.placeholder : 
+          formItem.noPlaceholder ? 
+          '' :
+          '请选择' + filters.interceptNum(formItem.label, 0 ,6)
+        }}
+			</view>
+    </picker>
+
+    <!-- 时间选择器 -->
+    <picker
+      wx:if="{{formItem.mode === 'time'}}"
+      data-key="{{index}}" 
+      mode="time"
+      disabled="{{formItem.disabled}}"
+      bindchange="bindPickerChange"
+      value="{{formItem.value}}"
+      start="{{formItem.start}}"
+      end="{{formItem.end}}"
+    >
+			<view class="picker {{(formItem.value && !formItem.disabled) ? '' : 'placeholderinput'}}">
+				{{formItem.value ? formItem.value : formItem.placeholder ? formItem.placeholder : '请选择' + formItem.label}}
+			</view>
+    </picker>
+
+    <!-- 日期选择器 -->
+    <picker
+      wx:if="{{formItem.mode === 'date'}}"
+      data-key="{{index}}" 
+      mode="date"
+      disabled="{{formItem.disabled}}"
+      bindchange="bindPickerChange"
+      value="{{formItem.value}}"
+      start="{{formItem.start}}"
+      end="{{formItem.end}}"
+      fields="{{formItem.fields ? formItem.fields : 'day'}}"
+    >
+			<view class="picker {{(formItem.value && !formItem.disabled) ? '' : 'placeholderinput'}}">
+				{{formItem.value ? formItem.value : formItem.placeholder ? formItem.placeholder : '请选择' + formItem.label}}
+			</view>
+    </picker>
+  </view>
+</view>
+
+<!-- 自定义picker-view -->
+<view class="picker-wrap-mark {{pickerViewStyle ? 'opacity1': 'opacity0'}}"
+    wx:if="{{pickerView}}">
+  <view class="mark" bindtap="closePicker"></view>
+  <view class="picker-wrap {{pickerViewStyle}}">
+    <view class="tit">
+      <view bindtap="closePicker" class="cancel button">取消</view>
+      <view bindtap="determinePicker" class="button">确定</view>
+    </view>
+    <picker-view class="picer-view-sty" indicator-style="height: 50px;"
+      value="{{formItem.value}}"
+      bindchange="pickerviewChange"
+      bindpickstart="chooseStart"
+      bindpickend="chooseEnd"
+    >
+        <picker-view-column style="text-align: center">
+          <view wx:for="{{formItem.range}}" wx:key="index" style="line-height: 50px">{{formItem.rangeKey ? item[formItem.rangeKey] : item}}</view>
+        </picker-view-column>
+      </picker-view>
+  </view>
+</view>

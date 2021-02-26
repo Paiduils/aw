@@ -2,7 +2,7 @@
 <wxs module="filters" src="../utils/filters.wxs"></wxs>
 <!-- <view wx:for="{{form}}" wx:key="index" wx:if="{{formItem.type === 'input'}}"> -->
 <view>
-  <view class="cu-form-group {{formItem.topLine ? 'top-line': ''}}{{formItem.clearBottomLine ? '': 'bottom-line'}}">
+  <view class="cu-form-group {{formItem.topLine ? 'top-line': ''}} {{formItem.clearBottomLine ? '': 'bottom-line'}}">
     <view class="title">{{filters.interceptNum(formItem.label, 0 ,6)}}<text class="red opacity0 {{formItem.requied ? 'opacity1' : ''}}" >*</text></view>
     <input
       type="{{formItem.inputType? formItem.inputType: 'text'}}" 

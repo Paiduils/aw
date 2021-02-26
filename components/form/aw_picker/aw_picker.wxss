@@ -1,0 +1,109 @@
+/* components/form/aw_picker/aw_picker.wxss */
+@import "../utils/aw_common.wxss";
+.red{
+  color: red;
+  margin-left: -4rpx;
+}
+
+.cu-form-group{
+  position: relative;
+}
+
+.picker-view-btn{
+  flex: 1;
+  padding-right: 40rpx;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-align: right;
+}
+
+.cu-form-group .picker-view-btn::after {
+	font-family: "cuIcon";
+	display: block;
+	content: "\e6a3";
+	position: absolute;
+	font-size: 34rpx;
+	color: var(--grey);
+	line-height: 100rpx;
+	width: 60rpx;
+	text-align: center;
+	top: 0;
+	bottom: 0;
+	right: -20rpx;
+	margin: auto;
+}
+
+
+.picker-wrap-mark{
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .22);
+  position: fixed;
+  z-index: 99999;
+  transition: all .2s;
+}
+.picker-wrap-mark .mark{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+
+.picker-wrap-mark .picker-wrap{
+  position: absolute;
+  /* bottom: 0; */
+  bottom: calc(-40% - 100rpx);
+  width: 100%;
+  height: calc(40% + 100rpx);
+  background: #fff;
+  transition: all .2s ease-out;
+}
+
+.picker-wrap .tit{
+  width: 100%;
+  height: 100rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.picker-wrap .tit .button{
+  height: 100rpx;
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  font-size: 34rpx;
+  color: #09c723;
+}
+
+.picker-wrap .tit .cancel {
+  color:#888
+}
+
+.picer-view-sty{
+  width: 100%;
+  height: 100%;
+}
+
+.picker-wrap-mark .show{
+  bottom: 0;
+  transition: all .2s ease-out;
+}
+
+.placeholderinput{
+  color: #aaa;
+  font-size:28rpx;
+}

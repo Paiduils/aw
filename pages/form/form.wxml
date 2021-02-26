@@ -1,7 +1,8 @@
 <!--pages/form/form.wxml-->
 <view wx:for="{{form}}" wx:key="index">
   <aw-input wx:if="{{item.type === 'input'}}" formItem='{{item}}' index='{{index}}'></aw-input>
+  <aw-picker wx:if="{{item.type === 'picker'}}" formItem='{{item}}' index='{{index}}'></aw-picker>
 </view>
 
 <!-- 点击该按钮验证是否符合规范 -->
-<button style="margin: 200px auto" bindtap="submitForm">提交</button>
+<button style="margin: 40rpx auto" bindtap="submitForm">提交</button>

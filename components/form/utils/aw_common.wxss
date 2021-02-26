@@ -1,0 +1,27 @@
+.cu-form-group .title {
+  padding-right: 10rpx;
+  min-width: calc(4em + 50rpx);
+  max-width: calc(6em + 50rpx);
+  overflow: hidden;
+}
+
+.placeholderinput{
+  color: #aaa;
+  font-size:28rpx;
+}
+
+.top-line {
+  border-top: 1rpx solid #eee;
+}
+
+.bottom-line {
+  border-bottom: 1rpx solid #eee;
+}
+
+.opacity0{
+  opacity: 0;
+}
+
+.opacity1{
+  opacity: 1;
+}

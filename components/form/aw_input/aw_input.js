@@ -15,7 +15,7 @@ Component({
      * ---参数说明---
      * topLine            默认没有上划线，可加
      * clearBottomLine    默认有下划线，可删
-     * label              输入框标题(最多长度为6，溢出隐藏)
+     * label              输入框标题(最大长度为6，溢出隐藏)
      * requied            是否必填（显示红星）
      * inputType          input框的类型，默认text
      * disabled           是否禁用

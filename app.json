@@ -13,6 +13,7 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "aw-input": "/components/form/aw_input/aw_input"
+    "aw-input": "/components/form/aw_input/aw_input",
+    "aw-picker": "/components/form/aw_picker/aw_picker"
   }
 }

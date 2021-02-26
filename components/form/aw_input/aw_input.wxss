@@ -1,35 +1,8 @@
 /* components/form/aw_input/aw_input.wxss */
-.cu-form-group .title {
-  padding-right: 10rpx;
-  min-width: calc(4em + 50rpx);
-  max-width: calc(6em + 50rpx);
-  overflow: hidden;
-}
-
-.placeholderinput{
-  color: #aaa;
-  font-size:28rpx;
-}
-
-.top-line {
-  border-top: 1rpx solid #eee;
-}
-
-.bottom-line {
-  border-bottom: 1rpx solid #eee;
-}
-
+@import "../utils/aw_common.wxss";
 .red{
   color: red;
   margin-left: 4rpx;
-}
-
-.opacity0{
-  opacity: 0;
-}
-
-.opacity1{
-  opacity: 1;
 }
 
 .cu-form-group .cu-btn{
